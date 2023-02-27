@@ -2,6 +2,8 @@
 library(tm)
 library(wordcloud)
 
+opinion_clean1 <- readr::read_csv('https://raw.githubusercontent.com/BigTimeStats/r-data-viz/main/SCOTUS-Wordcloud/oral_argument_gonzalez_v_google_feb_21.csv')
+
 topics1 <- unique(opinion_clean1$speaker)[unique(opinion_clean1$clean_text) != ''] %>% 
     grep('JUSTICE', ., value = TRUE) 
 
