@@ -2,6 +2,20 @@
 library(tm)
 library(wordcloud)
 
+topics1 <- unique(opinion_clean1$speaker)[unique(opinion_clean1$clean_text) != ''] %>% 
+    grep('JUSTICE', ., value = TRUE) 
+
+opinion_clean2 <- opinion_clean1 %>% 
+    filter(speaker %in% topics1)
+
+list_control <- vector()
+
+for(i in 1:length(topics1)){
+    
+    list_control[[i]] <- opinion_clean2 %>% filter(speaker == topics1[i]) %>% .[['clean_text']] %>% paste(., collapse = ' ')
+    
+}
+
 # Input the data into a corpus & TDM
 corpus <- Corpus(VectorSource(list_control))
 
