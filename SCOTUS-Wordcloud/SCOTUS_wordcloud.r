@@ -40,7 +40,7 @@ par(mar = c(0,0,2,0)) # leave a little margin at the top for a title
 
 # Create the comparison cloud which is saved to file above
 comparison.cloud(tdm, scale = c(6, .7), max.words = 1250, random.order = FALSE, title.size = 2.5) + 
-    title('Comparison Wordcloud: Gonzales v Google Feb. 21 Oral Argument')
+    title('Comparison Wordcloud: Gonzalez v Google Feb. 21 Oral Argument')
 
 # End the graphics connection
 dev.off()
